@@ -5,7 +5,7 @@ import App from './App';
 //configuring react router
 import { BrowserRouter } from 'react-router-dom'
 //configuring redux store
-import ReduxThunk from "redux-thunk"
+import {thunk} from "redux-thunk"
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux"
 import { userAuthReducer } from "./store/reducer/userAppStorage"
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   userAuth: userAuthReducer,
 })
 //creating store
-const store = createStore(rootReducer, applyMiddleware(ReduxThunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 
 ReactDOM.render(
